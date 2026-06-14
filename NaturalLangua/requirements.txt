@@ -1,0 +1,8 @@
+uiautomator2>=2.16.22
+adbutils>=2.4.0
+openai>=1.30.0
+python-dotenv>=1.0.0
+loguru>=0.7.2
+Pillow>=10.3.0
+rich>=13.7.0
+schedule>=1.2.2
