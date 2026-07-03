@@ -7,7 +7,7 @@
 # ============================================================
 
 # 当前使用的浏览器包名（按优先级注释，改 PACKAGE 即可切换）
-PACKAGE = "com.heytap.browser"
+PACKAGE = "com.android.browser"
 # PACKAGE = "com.android.chrome"
 # PACKAGE = "com.coloros.browser"
 
@@ -17,6 +17,9 @@ TEST_SEARCH_KEYWORD = "天气预报"
 
 # 常见控件 resourceId（不同浏览器版本可能不同，用例中会配合 text 兜底）
 URL_BAR_IDS = [
+    "com.android.browser:id/search_bar_url_container",
+    "com.android.browser:id/search_bar",
+    "com.android.browser:id/search_hint",
     "com.heytap.browser:id/url_bar",
     "com.heytap.browser:id/search_box",
     "com.android.chrome:id/url_bar",
@@ -24,3 +27,5 @@ URL_BAR_IDS = [
 ]
 
 SEARCH_INPUT_HINTS = ["搜索", "输入网址", "Search or type URL"]
+
+URL_BAR_DESCRIPTIONS = ["搜索或输入网址", "地址栏"]

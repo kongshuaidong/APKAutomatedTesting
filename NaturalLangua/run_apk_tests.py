@@ -9,7 +9,7 @@
 #   python run_apk_tests.py --apk app_store            # 跑应用商店全部用例
 #   python run_apk_tests.py --suite core               # 浏览器 → 应用商店（核心回归）
 #   python run_apk_tests.py --suite all                # 全部 APK
-#   python run_apk_tests.py --apk browser --case open_url search
+#   python run_apk_tests.py --apk browser --case TC002_open_url TC003_search
 #   python run_apk_tests.py --suite core -s ABC123     # 指定设备序列号
 #   python run_apk_tests.py --suite core --stop-on-fail
 #

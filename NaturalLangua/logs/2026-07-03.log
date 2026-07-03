@@ -1,0 +1,157 @@
+2026-07-03 15:42:21 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-07-03 15:42:21 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-07-03 15:42:21 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-07-03 15:42:21 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-07-03 15:42:21 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-07-03 15:42:22 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/TC001_open_browser] TC001_启动浏览器
+2026-07-03 15:42:22 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-07-03 15:42:23 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-07-03 15:42:26 | INFO     | utils.common:66 | ✅ 断言通过：浏览器应在前台，期望包名 com.android.browser
+2026-07-03 15:42:26 | INFO     | utils.common:66 | ✅ 断言通过：主页底部工具栏应存在 '工具' 按钮
+2026-07-03 15:42:26 | INFO     | core.ui_automator:217 | Waiting 1.5s
+2026-07-03 15:42:28 | INFO     | utils.common:66 | ✅ 断言通过：工具菜单中应存在 '退出' 项
+2026-07-03 15:42:28 | INFO     | core.ui_automator:217 | Waiting 2s
+2026-07-03 15:42:30 | INFO     | utils.common:66 | ✅ 断言通过：退出后浏览器不应仍在前台，包名 com.android.browser
+2026-07-03 15:42:30 | INFO     | core.app_controller:36 | Stopping app: com.android.browser
+2026-07-03 15:42:30 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/TC001_open_browser] TC001_启动浏览器 — 成功
+2026-07-03 15:42:30 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-07-03 15:42:30 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-07-03 15:42:30 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-07-03 15:42:30 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/TC001_open_browser] TC001_启动浏览器
+2026-07-03 15:42:30 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-07-03 15:42:34 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-07-03 15:42:34 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-07-03 15:42:34 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-07-03 15:42:34 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-07-03 15:42:34 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-07-03 15:42:35 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/TC002_open_url] TC002_打开指定网址
+2026-07-03 15:42:35 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-07-03 15:42:36 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-07-03 15:42:39 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-07-03 15:42:40 | INFO     | core.ui_automator:132 | Clearing and inputting text: 'https://www.baidu.com'
+2026-07-03 15:42:40 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-07-03 15:42:41 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-07-03 15:42:46 | INFO     | utils.common:66 | ✅ 断言通过：访问网页后应仍在浏览器前台
+2026-07-03 15:42:46 | INFO     | utils.common:66 | ✅ 断言通过：网页应已加载（WebView 或页面标题可见）
+2026-07-03 15:42:46 | INFO     | utils.common:66 | ✅ 断言通过：Web 页底部应存在 '主页' 按钮
+2026-07-03 15:42:46 | INFO     | core.ui_automator:217 | Waiting 2s
+2026-07-03 15:42:49 | INFO     | utils.common:66 | ✅ 断言通过：主页也应能唤出工具菜单
+2026-07-03 15:42:49 | INFO     | core.ui_automator:217 | Waiting 1.5s
+2026-07-03 15:42:51 | INFO     | utils.common:66 | ✅ 断言通过：工具菜单中应存在 '退出' 项
+2026-07-03 15:42:51 | INFO     | core.ui_automator:217 | Waiting 2s
+2026-07-03 15:42:53 | INFO     | utils.common:66 | ✅ 断言通过：退出后浏览器不应仍在前台，包名 com.android.browser
+2026-07-03 15:42:53 | INFO     | core.app_controller:36 | Stopping app: com.android.browser
+2026-07-03 15:42:53 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/TC002_open_url] TC002_打开指定网址 — 成功
+2026-07-03 15:42:53 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-07-03 15:42:53 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-07-03 15:42:53 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-07-03 15:42:53 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/TC002_open_url] TC002_打开指定网址
+2026-07-03 15:42:53 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-07-03 15:42:58 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-07-03 15:42:58 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-07-03 15:42:58 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-07-03 15:42:58 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-07-03 15:42:58 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-07-03 15:42:59 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/TC003_search] TC003_浏览器内搜索
+2026-07-03 15:42:59 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-07-03 15:42:59 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-07-03 15:43:03 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-07-03 15:43:04 | INFO     | core.ui_automator:132 | Clearing and inputting text: '天气预报'
+2026-07-03 15:43:04 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-07-03 15:43:05 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-07-03 15:43:09 | ERROR    | utils.common:68 | ❌ 断言失败：搜索后应出现结果页或相关内容
+2026-07-03 15:43:09 | ERROR    | core.exception_handler:36 | Exception [assertion]: AssertionError: 搜索后应出现结果页或相关内容
+2026-07-03 15:43:09 | DEBUG    | core.exception_handler:37 | NoneType: None
+
+2026-07-03 15:43:09 | INFO     | core.ui_automator:164 | Taking screenshot -> d:\ksdtool\toolksd_033206\APKAutomatedTesting\NaturalLangua\screenshots\error_20260703_154309.png
+2026-07-03 15:43:09 | INFO     | core.exception_handler:46 | Error screenshot saved: d:\ksdtool\toolksd_033206\APKAutomatedTesting\NaturalLangua\screenshots\error_20260703_154309.png
+2026-07-03 15:43:09 | ERROR    | tasks.framework.base_case:92 | 用例断言失败：TC003_浏览器内搜索
+2026-07-03 15:43:09 | INFO     | core.app_controller:36 | Stopping app: com.android.browser
+2026-07-03 15:43:09 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/TC003_search] TC003_浏览器内搜索 — 失败
+2026-07-03 15:43:09 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 0/1 ---
+2026-07-03 15:43:09 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-07-03 15:43:09 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 0，失败 1
+2026-07-03 15:43:09 | INFO     | tasks.framework.runner:58 |   [FAIL] [browser/TC003_search] TC003_浏览器内搜索
+2026-07-03 15:43:09 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-07-03 15:43:19 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-07-03 15:43:19 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-07-03 15:43:20 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-07-03 15:43:20 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-07-03 15:43:20 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-07-03 15:43:20 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/TC004_back_forward] TC004_前进后退导航
+2026-07-03 15:43:20 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-07-03 15:43:21 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-07-03 15:43:24 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-07-03 15:43:25 | INFO     | core.ui_automator:132 | Clearing and inputting text: 'https://www.baidu.com'
+2026-07-03 15:43:26 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-07-03 15:43:30 | INFO     | utils.common:66 | ✅ 断言通过：应先成功打开百度首页
+2026-07-03 15:43:31 | INFO     | core.ui_automator:217 | Waiting 1.5s
+2026-07-03 15:43:32 | INFO     | core.ui_automator:217 | Waiting 5s
+2026-07-03 15:43:37 | INFO     | utils.common:66 | ✅ 断言通过：点击内容后应进入详情页（'百度一下' 应不再可见）
+2026-07-03 15:43:38 | INFO     | utils.common:66 | ✅ 断言通过：详情页底部应存在 '后退' 按钮
+2026-07-03 15:43:38 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-07-03 15:43:41 | INFO     | utils.common:66 | ✅ 断言通过：后退后应仍在浏览器内，包名 com.android.browser
+2026-07-03 15:43:41 | INFO     | utils.common:66 | ✅ 断言通过：结果页底部应存在 '前进' 按钮
+2026-07-03 15:43:41 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-07-03 15:43:45 | INFO     | utils.common:66 | ✅ 断言通过：前进后应仍在浏览器内，包名 com.android.browser
+2026-07-03 15:43:45 | INFO     | utils.common:66 | ✅ 断言通过：Web 页底部应存在 '主页' 按钮
+2026-07-03 15:43:45 | INFO     | core.ui_automator:217 | Waiting 2s
+2026-07-03 15:43:48 | INFO     | utils.common:66 | ✅ 断言通过：主页也应能唤出工具菜单
+2026-07-03 15:43:48 | INFO     | core.ui_automator:217 | Waiting 1.5s
+2026-07-03 15:43:50 | INFO     | utils.common:66 | ✅ 断言通过：工具菜单中应存在 '退出' 项
+2026-07-03 15:43:50 | INFO     | core.ui_automator:217 | Waiting 2s
+2026-07-03 15:43:52 | INFO     | utils.common:66 | ✅ 断言通过：退出后浏览器不应仍在前台，包名 com.android.browser
+2026-07-03 15:43:52 | INFO     | core.app_controller:36 | Stopping app: com.android.browser
+2026-07-03 15:43:52 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/TC004_back_forward] TC004_前进后退导航 — 成功
+2026-07-03 15:43:52 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-07-03 15:43:52 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-07-03 15:43:52 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-07-03 15:43:52 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/TC004_back_forward] TC004_前进后退导航
+2026-07-03 15:43:52 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-07-03 15:43:56 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-07-03 15:43:56 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-07-03 15:43:56 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-07-03 15:43:56 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-07-03 15:43:56 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-07-03 15:43:56 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/TC005_add_favorite] TC005_添加收藏到收藏夹
+2026-07-03 15:43:56 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-07-03 15:43:57 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-07-03 15:44:00 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-07-03 15:44:01 | INFO     | core.ui_automator:132 | Clearing and inputting text: '好看的视频'
+2026-07-03 15:44:02 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-07-03 15:44:03 | INFO     | core.ui_automator:217 | Waiting 5s
+2026-07-03 15:44:08 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-07-03 15:44:09 | INFO     | utils.common:66 | ✅ 断言通过：底部工具栏应存在 '工具' 按钮
+2026-07-03 15:44:09 | INFO     | core.ui_automator:217 | Waiting 1.5s
+2026-07-03 15:44:11 | INFO     | utils.common:66 | ✅ 断言通过：工具菜单中应存在 '添加收藏' 项
+2026-07-03 15:44:11 | INFO     | core.ui_automator:217 | Waiting 1.5s
+2026-07-03 15:44:13 | INFO     | utils.common:66 | ✅ 断言通过：‘添加到…’对话框中应存在 ‘收藏’ 选项
+2026-07-03 15:44:13 | INFO     | core.ui_automator:217 | Waiting 2s
+2026-07-03 15:44:15 | INFO     | utils.common:66 | ✅ 断言通过：应能再次唤出工具菜单
+2026-07-03 15:44:15 | INFO     | core.ui_automator:217 | Waiting 1.5s
+2026-07-03 15:44:17 | INFO     | utils.common:66 | ✅ 断言通过：工具菜单中应存在 '我的收藏' 项
+2026-07-03 15:44:17 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-07-03 15:44:20 | INFO     | utils.common:66 | ✅ 断言通过：收藏夹中应包含关键词 '好看的视频'
+2026-07-03 15:44:20 | INFO     | utils.common:66 | ✅ 断言通过：应能定位到 '好看的视频' 条目用于长按
+2026-07-03 15:44:21 | INFO     | core.ui_automator:217 | Waiting 1.5s
+2026-07-03 15:44:23 | INFO     | utils.common:66 | ✅ 断言通过：编辑面板底部应存在 '删除' 按钮
+2026-07-03 15:44:23 | INFO     | core.ui_automator:217 | Waiting 1.5s
+2026-07-03 15:44:25 | INFO     | utils.common:66 | ✅ 断言通过：应弹出 '删除 N 个收藏' 确认按钮
+2026-07-03 15:44:25 | INFO     | core.ui_automator:217 | Waiting 2s
+2026-07-03 15:44:27 | INFO     | utils.common:66 | ✅ 断言通过：删除后收藏夹应不再包含 '好看的视频'
+2026-07-03 15:44:28 | INFO     | utils.common:66 | ✅ 断言通过：我的收藏页应存在返回按钮
+2026-07-03 15:44:28 | INFO     | core.ui_automator:217 | Waiting 2s
+2026-07-03 15:44:30 | INFO     | utils.common:66 | ✅ 断言通过：Web 页底部应存在 '主页' 按钮
+2026-07-03 15:44:30 | INFO     | core.ui_automator:217 | Waiting 2s
+2026-07-03 15:44:33 | INFO     | utils.common:66 | ✅ 断言通过：主页也应能唤出工具菜单
+2026-07-03 15:44:33 | INFO     | core.ui_automator:217 | Waiting 1.5s
+2026-07-03 15:44:35 | INFO     | utils.common:66 | ✅ 断言通过：工具菜单中应存在 '退出' 项
+2026-07-03 15:44:35 | INFO     | core.ui_automator:217 | Waiting 2s
+2026-07-03 15:44:37 | INFO     | utils.common:66 | ✅ 断言通过：退出后浏览器不应仍在前台，包名 com.android.browser
+2026-07-03 15:44:37 | INFO     | core.app_controller:36 | Stopping app: com.android.browser
+2026-07-03 15:44:37 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/TC005_add_favorite] TC005_添加收藏到收藏夹 — 成功
+2026-07-03 15:44:37 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-07-03 15:44:37 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-07-03 15:44:37 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-07-03 15:44:37 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/TC005_add_favorite] TC005_添加收藏到收藏夹
+2026-07-03 15:44:37 | INFO     | tasks.framework.runner:59 | ==================================================

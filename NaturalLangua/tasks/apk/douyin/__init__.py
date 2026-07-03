@@ -2,7 +2,7 @@
 # 【抖音 APK】__init__.py
 # ============================================================
 
-from tasks.apk.douyin.case_daily import CaseDaily
+from tasks.apk.douyin.TC001_daily import CaseDaily
 from tasks.apk.douyin.config import PACKAGE
 
 APK_INFO = {

@@ -2,10 +2,10 @@
 # 【应用商店 APK】__init__.py
 # ============================================================
 
-from tasks.apk.app_store.case_exit_store import CaseExitStore
-from tasks.apk.app_store.case_open_detail import CaseOpenDetail
-from tasks.apk.app_store.case_open_store import CaseOpenStore
-from tasks.apk.app_store.case_search_app import CaseSearchApp
+from tasks.apk.app_store.TC001_open_store import CaseOpenStore
+from tasks.apk.app_store.TC002_search_app import CaseSearchApp
+from tasks.apk.app_store.TC003_open_detail import CaseOpenDetail
+from tasks.apk.app_store.TC004_exit_store import CaseExitStore
 from tasks.apk.app_store.config import PACKAGE
 
 APK_INFO = {

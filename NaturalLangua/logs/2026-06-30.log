@@ -1,0 +1,265 @@
+2026-06-30 16:42:59 | INFO     | __main__:123 | 开始执行 APK：browser
+2026-06-30 16:42:59 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 16:42:59 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 16:43:00 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 16:43:00 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 16:43:00 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 16:43:00 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/open_browser] 启动浏览器
+2026-06-30 16:43:00 | INFO     | core.app_controller:25 | Launching app: com.heytap.browser
+2026-06-30 16:43:01 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 16:43:04 | ERROR    | utils.common:68 | ❌ 断言失败：浏览器应在前台，期望包名 com.heytap.browser
+2026-06-30 16:43:04 | ERROR    | core.exception_handler:36 | Exception [assertion]: AssertionError: 浏览器应在前台，期望包名 com.heytap.browser
+2026-06-30 16:43:04 | DEBUG    | core.exception_handler:37 | NoneType: None
+
+2026-06-30 16:43:04 | INFO     | core.ui_automator:164 | Taking screenshot -> D:\ksdtool\toolksd_033206\APKAutomatedTesting\NaturalLangua\screenshots\error_20260630_164304.png
+2026-06-30 16:43:04 | INFO     | core.exception_handler:46 | Error screenshot saved: D:\ksdtool\toolksd_033206\APKAutomatedTesting\NaturalLangua\screenshots\error_20260630_164304.png
+2026-06-30 16:43:04 | ERROR    | tasks.framework.base_case:92 | 用例断言失败：启动浏览器
+2026-06-30 16:43:04 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/open_browser] 启动浏览器 — 失败
+2026-06-30 16:43:04 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 0/1 ---
+2026-06-30 16:43:04 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 16:43:04 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 0，失败 1
+2026-06-30 16:43:04 | INFO     | tasks.framework.runner:58 |   [FAIL] [browser/open_browser] 启动浏览器
+2026-06-30 16:43:04 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 16:44:45 | INFO     | __main__:123 | 开始执行 APK：browser
+2026-06-30 16:44:45 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 16:44:45 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 16:44:45 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 16:44:45 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 16:44:45 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 16:44:46 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/open_browser] 启动浏览器
+2026-06-30 16:44:46 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 16:44:46 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 16:44:50 | INFO     | utils.common:66 | ✅ 断言通过：浏览器应在前台，期望包名 com.android.browser
+2026-06-30 16:44:50 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/open_browser] 启动浏览器 — 成功
+2026-06-30 16:44:50 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-06-30 16:44:50 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 16:44:50 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-06-30 16:44:50 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/open_browser] 启动浏览器
+2026-06-30 16:44:50 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 16:50:59 | INFO     | __main__:123 | 开始执行 APK：browser
+2026-06-30 16:50:59 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 16:50:59 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 16:50:59 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 16:50:59 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 16:50:59 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 16:51:00 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/open_url] 打开指定网址
+2026-06-30 16:51:00 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 16:51:00 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 16:51:16 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-06-30 16:51:17 | INFO     | core.ui_automator:132 | Clearing and inputting text: 'https://www.baidu.com'
+2026-06-30 16:51:18 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-06-30 16:51:18 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-06-30 16:51:22 | INFO     | utils.common:66 | ✅ 断言通过：访问网页后应仍在浏览器前台
+2026-06-30 16:51:22 | INFO     | utils.common:66 | ✅ 断言通过：网页应已加载（WebView 或页面标题可见）
+2026-06-30 16:51:22 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/open_url] 打开指定网址 — 成功
+2026-06-30 16:51:22 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-06-30 16:51:22 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 16:51:22 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-06-30 16:51:22 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/open_url] 打开指定网址
+2026-06-30 16:51:22 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 16:53:06 | INFO     | __main__:123 | 开始执行 APK：browser
+2026-06-30 16:53:06 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 16:53:06 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 16:53:06 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 16:53:06 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 16:53:06 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 16:53:07 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/open_url] 打开指定网址
+2026-06-30 16:53:07 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 16:53:07 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 16:53:23 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-06-30 16:53:24 | INFO     | core.ui_automator:132 | Clearing and inputting text: 'https://www.baidu.com'
+2026-06-30 16:53:24 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-06-30 16:53:25 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-06-30 16:53:29 | INFO     | utils.common:66 | ✅ 断言通过：访问网页后应仍在浏览器前台
+2026-06-30 16:53:29 | INFO     | utils.common:66 | ✅ 断言通过：网页应已加载（WebView 或页面标题可见）
+2026-06-30 16:53:29 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/open_url] 打开指定网址 — 成功
+2026-06-30 16:53:29 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-06-30 16:53:29 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 16:53:29 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-06-30 16:53:29 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/open_url] 打开指定网址
+2026-06-30 16:53:29 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 17:09:50 | INFO     | __main__:123 | 开始执行 APK：browser
+2026-06-30 17:09:50 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 17:09:50 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 17:09:50 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 17:09:50 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 17:09:50 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 17:09:51 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/open_url] 打开指定网址
+2026-06-30 17:09:51 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 17:09:51 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 17:09:55 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-06-30 17:09:56 | INFO     | core.ui_automator:132 | Clearing and inputting text: 'https://www.baidu.com'
+2026-06-30 17:09:56 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-06-30 17:09:57 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-06-30 17:10:01 | INFO     | utils.common:66 | ✅ 断言通过：访问网页后应仍在浏览器前台
+2026-06-30 17:10:01 | INFO     | utils.common:66 | ✅ 断言通过：网页应已加载（WebView 或页面标题可见）
+2026-06-30 17:10:01 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/open_url] 打开指定网址 — 成功
+2026-06-30 17:10:01 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-06-30 17:10:01 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 17:10:01 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-06-30 17:10:01 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/open_url] 打开指定网址
+2026-06-30 17:10:01 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 17:11:35 | INFO     | __main__:123 | 开始执行 APK：browser
+2026-06-30 17:11:35 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 17:11:35 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 17:11:35 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 17:11:35 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 17:11:35 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 17:11:35 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/open_url] 打开指定网址
+2026-06-30 17:11:35 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 17:11:36 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 17:12:07 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-06-30 17:12:08 | INFO     | core.ui_automator:132 | Clearing and inputting text: 'https://www.baidu.com'
+2026-06-30 17:12:08 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-06-30 17:12:09 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-06-30 17:12:13 | INFO     | utils.common:66 | ✅ 断言通过：访问网页后应仍在浏览器前台
+2026-06-30 17:12:13 | ERROR    | utils.common:68 | ❌ 断言失败：网页应已加载（WebView 或页面标题可见）
+2026-06-30 17:12:13 | ERROR    | core.exception_handler:36 | Exception [assertion]: AssertionError: 网页应已加载（WebView 或页面标题可见）
+2026-06-30 17:12:13 | DEBUG    | core.exception_handler:37 | NoneType: None
+
+2026-06-30 17:12:13 | INFO     | core.ui_automator:164 | Taking screenshot -> D:\ksdtool\toolksd_033206\APKAutomatedTesting\NaturalLangua\screenshots\error_20260630_171213.png
+2026-06-30 17:12:13 | INFO     | core.exception_handler:46 | Error screenshot saved: D:\ksdtool\toolksd_033206\APKAutomatedTesting\NaturalLangua\screenshots\error_20260630_171213.png
+2026-06-30 17:12:13 | ERROR    | tasks.framework.base_case:92 | 用例断言失败：打开指定网址
+2026-06-30 17:12:13 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/open_url] 打开指定网址 — 失败
+2026-06-30 17:12:13 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 0/1 ---
+2026-06-30 17:12:13 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 17:12:13 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 0，失败 1
+2026-06-30 17:12:13 | INFO     | tasks.framework.runner:58 |   [FAIL] [browser/open_url] 打开指定网址
+2026-06-30 17:12:13 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 17:50:53 | INFO     | __main__:123 | 开始执行 APK：browser
+2026-06-30 17:50:53 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 17:50:53 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 17:50:53 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 17:50:53 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 17:50:53 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 17:50:54 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/open_url] 打开指定网址
+2026-06-30 17:50:54 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 17:50:54 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 17:51:02 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-06-30 17:51:03 | INFO     | core.ui_automator:132 | Clearing and inputting text: 'https://www.baidu.com'
+2026-06-30 17:51:03 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-06-30 17:51:04 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-06-30 17:51:08 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-06-30 17:51:09 | ERROR    | utils.common:68 | ❌ 断言失败：访问网页后应仍在浏览器前台
+2026-06-30 17:51:09 | ERROR    | core.exception_handler:36 | Exception [assertion]: AssertionError: 访问网页后应仍在浏览器前台
+2026-06-30 17:51:09 | DEBUG    | core.exception_handler:37 | NoneType: None
+
+2026-06-30 17:51:09 | INFO     | core.ui_automator:164 | Taking screenshot -> D:\ksdtool\toolksd_033206\APKAutomatedTesting\NaturalLangua\screenshots\error_20260630_175109.png
+2026-06-30 17:51:10 | INFO     | core.exception_handler:46 | Error screenshot saved: D:\ksdtool\toolksd_033206\APKAutomatedTesting\NaturalLangua\screenshots\error_20260630_175109.png
+2026-06-30 17:51:10 | ERROR    | tasks.framework.base_case:92 | 用例断言失败：打开指定网址
+2026-06-30 17:51:10 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/open_url] 打开指定网址 — 失败
+2026-06-30 17:51:10 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 0/1 ---
+2026-06-30 17:51:10 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 17:51:10 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 0，失败 1
+2026-06-30 17:51:10 | INFO     | tasks.framework.runner:58 |   [FAIL] [browser/open_url] 打开指定网址
+2026-06-30 17:51:10 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 17:52:33 | INFO     | __main__:123 | 开始执行 APK：browser
+2026-06-30 17:52:33 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 17:52:33 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 17:52:33 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 17:52:33 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 17:52:33 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 17:52:34 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/open_url] 打开指定网址
+2026-06-30 17:52:34 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 17:52:34 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 17:52:38 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-06-30 17:52:39 | INFO     | core.ui_automator:132 | Clearing and inputting text: 'https://www.baidu.com'
+2026-06-30 17:52:39 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-06-30 17:52:40 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-06-30 17:52:44 | INFO     | utils.common:66 | ✅ 断言通过：访问网页后应仍在浏览器前台
+2026-06-30 17:52:44 | INFO     | utils.common:66 | ✅ 断言通过：网页应已加载（WebView 或页面标题可见）
+2026-06-30 17:52:44 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/open_url] 打开指定网址 — 成功
+2026-06-30 17:52:44 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-06-30 17:52:44 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 17:52:44 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-06-30 17:52:44 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/open_url] 打开指定网址
+2026-06-30 17:52:44 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 17:56:52 | INFO     | __main__:123 | 开始执行 APK：browser
+2026-06-30 17:56:52 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 17:56:52 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 17:56:52 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 17:56:52 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 17:56:52 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 17:56:52 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/search] 浏览器内搜索
+2026-06-30 17:56:52 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 17:56:53 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 17:57:18 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-06-30 17:57:19 | INFO     | core.ui_automator:132 | Clearing and inputting text: '天气预报'
+2026-06-30 17:57:19 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-06-30 17:57:26 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-06-30 17:57:30 | INFO     | utils.common:66 | ✅ 断言通过：搜索后应出现结果页或相关内容
+2026-06-30 17:57:30 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/search] 浏览器内搜索 — 成功
+2026-06-30 17:57:30 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-06-30 17:57:30 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 17:57:30 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-06-30 17:57:30 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/search] 浏览器内搜索
+2026-06-30 17:57:30 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 17:58:03 | INFO     | __main__:123 | 开始执行 APK：browser
+2026-06-30 17:58:03 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 17:58:03 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 17:58:03 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 17:58:03 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 17:58:03 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 17:58:04 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/search] 浏览器内搜索
+2026-06-30 17:58:04 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 17:58:04 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 17:58:08 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-06-30 17:58:09 | INFO     | core.ui_automator:132 | Clearing and inputting text: '天气预报'
+2026-06-30 17:58:09 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-06-30 17:58:10 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-06-30 17:58:14 | INFO     | utils.common:66 | ✅ 断言通过：搜索后应出现结果页或相关内容
+2026-06-30 17:58:14 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/search] 浏览器内搜索 — 成功
+2026-06-30 17:58:14 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-06-30 17:58:14 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 17:58:14 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-06-30 17:58:14 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/search] 浏览器内搜索
+2026-06-30 17:58:14 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 18:07:31 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 18:07:31 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 18:07:31 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 18:07:31 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 18:07:31 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 18:07:32 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/open_browser] 启动浏览器
+2026-06-30 18:07:32 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 18:07:32 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 18:07:35 | INFO     | utils.common:66 | ✅ 断言通过：浏览器应在前台，期望包名 com.android.browser
+2026-06-30 18:07:35 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/open_browser] 启动浏览器 — 成功
+2026-06-30 18:07:35 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-06-30 18:07:35 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 18:07:35 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-06-30 18:07:35 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/open_browser] 启动浏览器
+2026-06-30 18:07:35 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 18:09:33 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 18:09:33 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 18:09:33 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 18:09:33 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 18:09:33 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 18:09:34 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/search] 浏览器内搜索
+2026-06-30 18:09:34 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 18:09:34 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 18:09:38 | INFO     | core.ui_automator:217 | Waiting 1s
+2026-06-30 18:09:39 | INFO     | core.ui_automator:132 | Clearing and inputting text: '天气预报'
+2026-06-30 18:09:39 | INFO     | core.ui_automator:217 | Waiting 0.5s
+2026-06-30 18:09:40 | INFO     | core.ui_automator:217 | Waiting 4s
+2026-06-30 18:09:44 | INFO     | utils.common:66 | ✅ 断言通过：搜索后应出现结果页或相关内容
+2026-06-30 18:09:44 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/search] 浏览器内搜索 — 成功
+2026-06-30 18:09:44 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-06-30 18:09:44 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 18:09:44 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-06-30 18:09:44 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/search] 浏览器内搜索
+2026-06-30 18:09:44 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-06-30 18:11:19 | INFO     | tasks.framework.runner:84 | --- APK 开始: 手机浏览器 (browser) ---
+2026-06-30 18:11:19 | INFO     | tasks.framework.runner:86 |     说明：浏览器核心能力：启动、打开网址、搜索、前进后退
+2026-06-30 18:11:20 | DEBUG    | core.device_manager:23 | Found 1 device(s)
+2026-06-30 18:11:20 | INFO     | core.device_manager:46 | Connected to device: ZYPZ261A01M65K000LH
+2026-06-30 18:11:20 | INFO     | utils.common:36 | 已连接设备：ZYPZ261A01M65K000LH
+2026-06-30 18:11:20 | INFO     | tasks.framework.base_case:56 | >> 用例开始 [手机浏览器/open_browser] 启动浏览器
+2026-06-30 18:11:20 | INFO     | core.app_controller:25 | Launching app: com.android.browser
+2026-06-30 18:11:20 | INFO     | core.ui_automator:217 | Waiting 3s
+2026-06-30 18:11:24 | INFO     | utils.common:66 | ✅ 断言通过：浏览器应在前台，期望包名 com.android.browser
+2026-06-30 18:11:24 | INFO     | tasks.framework.base_case:70 | << 用例结束 [手机浏览器/open_browser] 启动浏览器 — 成功
+2026-06-30 18:11:24 | INFO     | tasks.framework.runner:95 | --- APK 结束: 手机浏览器 - 通过 1/1 ---
+2026-06-30 18:11:24 | INFO     | tasks.framework.runner:54 | ==================================================
+2026-06-30 18:11:24 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
+2026-06-30 18:11:24 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/open_browser] 启动浏览器
+2026-06-30 18:11:24 | INFO     | tasks.framework.runner:59 | ==================================================

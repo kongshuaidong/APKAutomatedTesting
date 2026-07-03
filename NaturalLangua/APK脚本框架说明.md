@@ -57,7 +57,7 @@ python run_apk_tests.py --suite core
 python run_apk_tests.py --suite all
 
 # 只跑指定用例
-python run_apk_tests.py --apk browser --case open_url search
+python run_apk_tests.py --apk browser --case TC002_open_url TC003_search
 
 # 指定设备序列号
 python run_apk_tests.py --suite core -s 设备序列号
@@ -136,7 +136,7 @@ PACKAGE = "com.heytap.market"
 4. 创建 `__init__.py`，导出 `APK_INFO` 和 `CASES`：
 
 ```python
-from tasks.apk.wechat.case_xxx import CaseXxx
+from tasks.apk.wechat.TC001_xxx import CaseXxx
 from tasks.apk.wechat.config import PACKAGE
 
 APK_INFO = {
