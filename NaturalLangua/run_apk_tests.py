@@ -23,6 +23,7 @@
 import argparse
 import os
 import sys
+import time
 
 # 保证从 NaturalLangua 根目录可导入
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -31,6 +32,7 @@ if ROOT not in sys.path:
 
 from tasks.framework.registry import SUITES, get_apk_module, get_apk_modules, list_suite_names
 from tasks.framework.runner import TestRunner
+from utils.feishu_notifier import notify_report
 from utils.logger import logger
 
 
@@ -119,16 +121,29 @@ def main() -> int:
         stop_on_fail=args.stop_on_fail,
     )
 
+    start_time = time.time()
     if args.apk:
         logger.info(f"开始执行 APK：{args.apk}")
         report = runner.run_apk(args.apk, case_ids=args.case)
         report.print_summary()
+        title = f"APK 自动化 · {args.apk}"
     elif args.suite:
         logger.info(f"开始执行套件：{args.suite}")
         report = runner.run_suite(args.suite, case_ids=args.case)
+        title = f"APK 自动化 · 套件 {args.suite}"
     else:
         parser.print_help()
         return 1
+
+    elapsed = time.time() - start_time
+
+    # 飞书通知：未配置 env 时静默跳过，发送失败不影响返回码
+    notify_report(
+        title=title,
+        results=report.results,
+        elapsed_sec=elapsed,
+        device_serial=args.device or "",
+    )
 
     return 0 if report.all_passed else 1
 

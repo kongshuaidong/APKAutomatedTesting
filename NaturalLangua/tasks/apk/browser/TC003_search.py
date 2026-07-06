@@ -77,6 +77,14 @@ class CaseSearch(ApkTestCase):
 
         self.wait(4)
 
+        # 网站权限弹窗（百度常见的获取位置信息）— 精准点 "允许" 一次
+        for btn_text in ("允许", "同意"):
+            btn = self.d(text=btn_text)
+            if btn.exists:
+                btn.click()
+                self.wait(1.5)
+                break
+
         # ── 断言：出现搜索结果特征 ───────────────────────────────────────
         has_results = (
             self.d(className="android.webkit.WebView").exists

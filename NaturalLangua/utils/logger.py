@@ -5,6 +5,11 @@ from config import LOG_DIR
 
 logger.remove()
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except (AttributeError, OSError):
+    pass
+
 logger.add(
     sys.stdout,
     level="INFO",

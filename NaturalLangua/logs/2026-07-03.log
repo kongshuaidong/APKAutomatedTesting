@@ -155,3 +155,5 @@
 2026-07-03 15:44:37 | INFO     | tasks.framework.runner:55 | 执行汇总：共 1 条，通过 1，失败 0
 2026-07-03 15:44:37 | INFO     | tasks.framework.runner:58 |   [PASS] [browser/TC005_add_favorite] TC005_添加收藏到收藏夹
 2026-07-03 15:44:37 | INFO     | tasks.framework.runner:59 | ==================================================
+2026-07-03 18:57:37 | INFO     | utils.feishu_notifier:178 | 飞书通知已发送
+2026-07-03 19:04:59 | INFO     | utils.feishu_notifier:178 | 飞书通知已发送

@@ -1,0 +1,18 @@
+# 敏感凭证（飞书 App Secret / OpenAI Key 等）
+.env
+.env.local
+*.env.local
+
+# Python 编译产物
+__pycache__/
+*.pyc
+*.pyo
+
+# 运行时产出
+NaturalLangua/logs/
+NaturalLangua/screenshots/*.png
+NaturalLangua/screenshots/*.xml
+
+# IDE
+.vscode/
+.idea/
