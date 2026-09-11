@@ -33,6 +33,8 @@ def _load_apk_modules() -> List[ApkModule]:
     from tasks.apk.browser import APK_INFO as BROWSER_INFO, CASES as BROWSER_CASES
     from tasks.apk.app_store import APK_INFO as STORE_INFO, CASES as STORE_CASES
     from tasks.apk.douyin import APK_INFO as DOUYIN_INFO, CASES as DOUYIN_CASES
+    from tasks.apk.ailauncher import APK_INFO as AILAUNCHER_INFO, CASES as AILAUNCHER_CASES
+    from tasks.apk.lark import APK_INFO as LARK_INFO, CASES as LARK_CASES
 
     modules = [
         ApkModule(
@@ -56,6 +58,20 @@ def _load_apk_modules() -> List[ApkModule]:
             case_classes=DOUYIN_CASES,
             description=DOUYIN_INFO.get("description", ""),
         ),
+        ApkModule(
+            apk_id=AILAUNCHER_INFO["apk_id"],
+            apk_name=AILAUNCHER_INFO["apk_name"],
+            package_name=AILAUNCHER_INFO["package_name"],
+            case_classes=AILAUNCHER_CASES,
+            description=AILAUNCHER_INFO.get("description", ""),
+        ),
+        ApkModule(
+            apk_id=LARK_INFO["apk_id"],
+            apk_name=LARK_INFO["apk_name"],
+            package_name=LARK_INFO["package_name"],
+            case_classes=LARK_CASES,
+            description=LARK_INFO.get("description", ""),
+        ),
     ]
     return modules
 
@@ -65,7 +81,7 @@ SUITES = {
     # 核心回归：浏览器 + 应用商店（用户最常一键跑的顺序）
     "core": ["browser", "app_store"],
     # 全量：所有已注册 APK
-    "all": ["browser", "app_store", "douyin"],
+    "all": ["browser", "app_store", "douyin", "ailauncher", "lark"],
 }
 
 

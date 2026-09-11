@@ -43,10 +43,11 @@ NaturalLangua/
 # 查看所有 APK 和用例
 python run_apk_tests.py --list
 
-# 跑单个 APK 的全部用例
+# 跑单个 APK 的全部用例,cd 进 NaturalLangua 
 python run_apk_tests.py --apk browser
 python run_apk_tests.py --apk app_store
 python run_apk_tests.py --apk douyin
+python run_apk_tests.py --apk ailauncher
 
 # 一键核心回归：浏览器 → 应用商店（按顺序）
 python run_apk_tests.py --suite core
@@ -71,7 +72,7 @@ python run_apk_tests.py --suite core --stop-on-fail
 | 套件名 | 执行顺序 |
 |--------|----------|
 | `core` | 浏览器 → 应用商店 |
-| `all` | 浏览器 → 应用商店 → 抖音 |
+| `all` | 浏览器 → 应用商店 → 抖音 → AI 桌面 |
 
 ---
 
@@ -107,6 +108,14 @@ python run_apk_tests.py --suite core --stop-on-fail
 | `daily` | 抖音每日任务 | 打开 → 切换深圳同城 → 搜索 → 播放 → 退出 |
 
 默认包名：`com.ss.android.ugc.aweme`
+
+### ailauncher（AI 桌面）
+
+| 用例 ID | 名称 | 说明 |
+|---------|------|------|
+| `TC001_open_ailauncher` | 启动 AI 桌面 | 通过包名启动，断言应用在前台 |
+
+默认包名：`com.stepos.ailauncher`
 
 ---
 
@@ -234,7 +243,10 @@ class CaseOpenChat(ApkTestCase):
    断言失败会自动截图到 `screenshots/`，日志写入 `logs/`。
 
 6. **定时任务**  
-   - `python scheduler.py` 会在每天固定时间自动跑抖音用例  
+   - `python scheduler.py --apk <APK_ID> --at HH:MM` 每天在指定时间自动跑该 APK 用例（可传多次 `--at` 支持多时间点）  
+     示例：`python scheduler.py --apk lark --at 20:35`（每天 20:35 领取中智关爱）  
+     示例：`python scheduler.py --apk ailauncher --at 09:00 --at 21:00`（早晚各跑一次）  
+   - 可加 `--case <ID>` 只跑指定用例、`-s <SERIAL>` 指定设备  
    - 手动执行统一使用 `run_apk_tests.py`
 
 7. **套件顺序**  
