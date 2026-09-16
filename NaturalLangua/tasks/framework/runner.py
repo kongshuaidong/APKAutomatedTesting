@@ -7,13 +7,15 @@
 #   runner.run_apk("browser")              # 跑浏览器全部用例
 #   runner.run_apk("browser", ["open_url"]) # 只跑指定用例
 #   runner.run_suite("core")               # 浏览器 → 应用商店
+#
+# 若传入 reporter=AllureReporter(...)，每条用例会自动写 Allure 结果。
 # ============================================================
 
 from dataclasses import dataclass, field
 from typing import List, Optional, Type
 
 from tasks.framework.base_case import ApkTestCase
-from tasks.framework.registry import ApkModule, SUITES, get_apk_module, get_apk_modules
+from tasks.framework.registry import ApkModule, SUITES, get_apk_module
 from utils.logger import logger
 
 
@@ -62,14 +64,21 @@ class RunReport:
 class TestRunner:
     """APK 自动化测试执行器。"""
 
-    def __init__(self, device_serial: Optional[str] = None, stop_on_fail: bool = False):
+    def __init__(
+        self,
+        device_serial: Optional[str] = None,
+        stop_on_fail: bool = False,
+        reporter=None,
+    ):
         """
         参数：
             device_serial : ADB 序列号，None 则自动选第一台设备
             stop_on_fail  : True 时某条用例失败后停止后续用例（默认继续跑完）
+            reporter      : Allure reporter 实例（可选），传入后每条用例会写 Allure 结果
         """
         self.device_serial = device_serial
         self.stop_on_fail = stop_on_fail
+        self.reporter = reporter
 
     def run_apk(
         self,
@@ -147,6 +156,7 @@ class TestRunner:
         case.apk_id = module.apk_id
         case.apk_name = module.apk_name
         case.package_name = module.package_name
+        case.reporter = self.reporter
 
         passed = case.execute()
         return CaseResult(

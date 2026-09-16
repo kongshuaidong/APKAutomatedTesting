@@ -15,6 +15,7 @@
 # ============================================================
 
 import json
+import os
 import time
 from typing import List, Optional
 
@@ -88,6 +89,7 @@ def build_report_card(
     results: List,
     elapsed_sec: float,
     device_serial: str = "",
+    report_path: str = "",
 ) -> dict:
     """
     根据 RunReport.results 构造交互式卡片。
@@ -97,6 +99,8 @@ def build_report_card(
         results       : List[CaseResult]，含 apk_id / case_id / case_name / passed / error
         elapsed_sec   : 整轮耗时（秒）
         device_serial : ADB 设备序列号，可选
+        report_path   : HTML 报告的本地绝对路径，可选。有值时卡片会带上路径与
+                        file:// URL；接收方与执行机同机时可复制到浏览器打开
 
     返回：飞书 interactive 卡片 JSON dict
     """
@@ -130,17 +134,30 @@ def build_report_card(
             line += f"\n   > {err}"
         detail_lines.append(line)
 
+    elements: List[dict] = [
+        {"tag": "div", "text": {"tag": "lark_md", "content": summary}},
+        {"tag": "hr"},
+        {"tag": "div", "text": {"tag": "lark_md", "content": "\n".join(detail_lines)}},
+    ]
+
+    if report_path:
+        # 本地绝对路径 + file:// URL；接收方在执行机上可复制粘贴打开
+        file_url = "file:///" + os.path.abspath(report_path).replace("\\", "/")
+        report_block = (
+            f"**📊 HTML 报告：**\n"
+            f"`{os.path.abspath(report_path)}`\n"
+            f"[点击打开（同机复制到浏览器）]({file_url})"
+        )
+        elements.append({"tag": "hr"})
+        elements.append({"tag": "div", "text": {"tag": "lark_md", "content": report_block}})
+
     return {
         "config": {"wide_screen_mode": True},
         "header": {
             "title": {"tag": "plain_text", "content": f"{status_emoji} {title}"},
             "template": template,
         },
-        "elements": [
-            {"tag": "div", "text": {"tag": "lark_md", "content": summary}},
-            {"tag": "hr"},
-            {"tag": "div", "text": {"tag": "lark_md", "content": "\n".join(detail_lines)}},
-        ],
+        "elements": elements,
     }
 
 
@@ -150,10 +167,13 @@ def notify_report(
     results: List,
     elapsed_sec: float,
     device_serial: str = "",
+    report_path: str = "",
 ) -> None:
     """
     读取 config 中的 FEISHU_* 环境变量，构造并发送卡片。
     未配置时静默跳过；发送失败仅日志警告，不抛异常。
+
+    report_path 为 HTML 报告的本地绝对路径，会附到卡片底部。
     """
     import config as cfg
 
@@ -173,6 +193,7 @@ def notify_report(
             results=results,
             elapsed_sec=elapsed_sec,
             device_serial=device_serial,
+            report_path=report_path,
         )
         notifier.send_card(card)
         logger.info("飞书通知已发送")

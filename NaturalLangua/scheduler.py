@@ -25,8 +25,11 @@
 import argparse
 import os
 import re
+import subprocess
 import sys
 import time
+
+import platform
 
 import schedule
 
@@ -34,8 +37,14 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from tasks.framework.registry import list_apk_ids
 from tasks.framework.runner import TestRunner
+from utils.allure_reporter import AllureReporter
 from utils.feishu_notifier import notify_report
 from utils.logger import logger
+
+from gen_report import default_report_path
+
+
+DEFAULT_ALLURE_DIR = os.path.join(os.path.dirname(__file__), "allure-results")
 
 
 TIME_RE = re.compile(r"^([01]?\d|2[0-3]):([0-5]\d)$")
@@ -87,29 +96,102 @@ def _build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="某条用例失败后停止后续用例",
     )
+    parser.add_argument(
+        "--allure-dir",
+        metavar="DIR",
+        default=DEFAULT_ALLURE_DIR,
+        help=f"Allure 结果目录（默认 {DEFAULT_ALLURE_DIR}）；定时任务采用追加模式",
+    )
+    parser.add_argument(
+        "--no-allure",
+        action="store_true",
+        help="关闭 Allure 结果输出",
+    )
+    parser.add_argument(
+        "--no-report",
+        action="store_true",
+        help="定时任务触发后不生成 report.html（默认生成）",
+    )
     return parser
 
 
-def _make_job(apk_id, case_ids, device, stop_on_fail, at):
+def _build_reporter(args) -> AllureReporter | None:
+    if args.no_allure:
+        return None
+    reporter = AllureReporter(args.allure_dir)
+    # 定时任务多次触发同一 apk，累积结果更有意义，因此不清空目录
+    reporter.write_environment(
+        {
+            "platform": platform.platform(),
+            "python": platform.python_version(),
+            "device": args.device or "(auto)",
+            "framework": "APKAutomatedTesting-Scheduler",
+            "apk": args.apk,
+            "schedule": ",".join(sorted(set(args.at))),
+        }
+    )
+    reporter.write_categories()
+    reporter.write_executor(
+        {
+            "name": "APK Scheduler",
+            "type": "custom",
+            "reportName": f"APK 定时任务报告 · {args.apk}",
+        }
+    )
+    return reporter
+
+
+def _make_job(apk_id, case_ids, device, stop_on_fail, at, reporter, gen_report):
     def job():
         logger.info(f"定时任务触发：apk={apk_id} at={at}")
         try:
-            runner = TestRunner(device_serial=device, stop_on_fail=stop_on_fail)
+            runner = TestRunner(
+                device_serial=device,
+                stop_on_fail=stop_on_fail,
+                reporter=reporter,
+            )
             start = time.time()
             report = runner.run_apk(apk_id, case_ids=case_ids)
             report.print_summary()
             elapsed = time.time() - start
+
+            # 先生成 HTML，让飞书通知带上路径
+            html_report_path = ""
+            if gen_report and reporter is not None:
+                html_report_path = default_report_path(apk_id)
+                if not _generate_html_report(reporter.results_dir, html_report_path):
+                    html_report_path = ""
+
             notify_report(
                 title=f"APK 定时任务 · {apk_id} @ {at}",
                 results=report.results,
                 elapsed_sec=elapsed,
                 device_serial=device or "",
+                report_path=html_report_path,
             )
             if not report.all_passed:
                 logger.error(f"[{apk_id}] 定时任务未全部通过")
         except Exception as exc:
             logger.error(f"[{apk_id}] 定时任务执行异常：{exc}")
     return job
+
+
+def _generate_html_report(results_dir: str, out_path: str) -> bool:
+    """调 gen_report.py 出 HTML；out_path 由调用方预先算好并传入。"""
+    cmd = [
+        sys.executable,
+        os.path.join(os.path.dirname(__file__), "gen_report.py"),
+        "--results",
+        results_dir,
+        "--out",
+        out_path,
+    ]
+    try:
+        rc = subprocess.call(cmd)
+        return rc == 0
+    except OSError as e:
+        logger.warning(f"生成 HTML 报告失败：{e}")
+        return False
 
 
 def main() -> int:
@@ -124,8 +206,15 @@ def main() -> int:
     )
     logger.info("保持此窗口运行，按 Ctrl+C 可停止调度器")
 
+    reporter = _build_reporter(args)
+    if reporter is not None:
+        logger.info(f"Allure 结果目录：{reporter.results_dir}（追加模式）")
+
     for t in times:
-        job = _make_job(args.apk, args.case, args.device, args.stop_on_fail, t)
+        job = _make_job(
+            args.apk, args.case, args.device, args.stop_on_fail, t,
+            reporter, gen_report=not args.no_report,
+        )
         schedule.every().day.at(t).do(job)
 
     logger.info(f"下次执行时间：{schedule.next_run()}")

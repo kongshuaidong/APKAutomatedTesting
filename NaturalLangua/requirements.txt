@@ -6,3 +6,9 @@ loguru>=0.7.2
 Pillow>=10.3.0
 rich>=13.7.0
 schedule>=1.2.2
+requests>=2.31.0
+
+# Allure 报告：Python 侧不依赖任何 pip 包（框架直接写 JSON 结果）。
+# 但生成/查看报告需要 Allure CLI（Java 应用）：
+#   下载 https://github.com/allure-framework/allure2/releases
+#   解压后将 bin/ 目录加入 PATH，验证：`allure --version`

@@ -231,7 +231,8 @@ class CaseOpenChat(ApkTestCase):
 2. **运行前准备**  
    - 手机开启 USB 调试并连接电脑  
    - 已安装依赖：`pip install -r requirements.txt`  
-   - 建议先执行：`python -m uiautomator2 init`
+   - 建议先执行：`python -m uiautomator2 init`  
+   - 一键自检：`python check_env.py`（或 `python check_env.py --quiet` 只看异常）
 
 3. **首次使用建议**  
    先 `python run_apk_tests.py --list` 确认用例列表，再 `python run_apk_tests.py --suite core` 做整体验证。
@@ -254,3 +255,122 @@ class CaseOpenChat(ApkTestCase):
 
 8. **Windows 控制台**  
    若中文乱码，可在终端执行 `chcp 65001` 切换 UTF-8，或使用 Cursor / VS Code 集成终端。
+
+---
+
+## Allure 测试报告
+
+框架已内置 Allure 集成，每次运行会把结果写到 `allure-results/`，可生成美观的可视化报告（含步骤、截图、失败堆栈、历史趋势）。
+
+> **allure-results 里为什么是 JSON？** JSON 是中间格式，需要工具把它渲染成 HTML。
+> 项目提供两种渲染方式，任选其一：
+> - **内置 Python 渲染器（推荐）**：零依赖，一条命令出 HTML，见下方"简易 HTML 报告"
+> - **官方 Allure CLI（功能全）**：需装 Java 版工具，见"官方 Allure 报告"
+
+### 简易 HTML 报告（推荐，无需装任何东西）
+
+**默认行为**：`run_apk_tests.py` / `scheduler.py` 每次跑完会自动生成一份 HTML 报告：
+
+- 输出目录：`allure-results/report/`（跟随结果目录，方便整体归档）
+- 文件名规则：`report_<应用标识>_<YYYYMMDD_HHMM>.html`
+- 例如：`allure-results/report/report_ailauncher_20260916_1608.html`、
+  `allure-results/report/report_suite-core_20260916_1608.html`
+- 每次运行都是**独立文件**，不覆盖历史，方便回看不同批次的对比
+- 定时任务同理，每次触发生成新文件
+
+**飞书通知**：若配置了 `.env` 里的 FEISHU_*，跑完发的卡片底部会带上这份 HTML 的绝对路径 + `file://` 链接，接收方若与执行机同机（或能访问该路径），可以直接复制到浏览器打开报告。
+
+`gen_report.py` 把 `allure-results/*.json` 直接渲染成一个自包含的 HTML：
+
+```bash
+# 跑完自动生成（默认行为，什么都不用加）
+python run_apk_tests.py --apk ailauncher
+# → 生成 allure-results/report/report_ailauncher_<时间>.html
+
+python run_apk_tests.py --suite core
+# → 生成 allure-results/report/report_suite-core_<时间>.html
+
+# 跑完顺便打开浏览器
+python run_apk_tests.py --apk ailauncher --open-report
+
+# 不想要 HTML 报告（比如 CI 里）
+python run_apk_tests.py --apk ailauncher --no-report
+
+# 手动只生成报告（不跑用例）
+python gen_report.py --label ailauncher --open   # 带标识 + 时间戳 + 打开
+python gen_report.py --out custom.html           # 完全指定输出路径
+python gen_report.py                             # 不带 label 时输出到 allure-results/report/report.html
+python gen_report.py --no-embed                  # 不嵌入图片（HTML 更小但需保留 allure-results/）
+
+# 双击一键出报告 + 打开
+NaturalLangua\gen_report.bat
+```
+
+HTML 里可以看到：汇总卡片（点击可过滤 通过/失败/异常）、按 APK 分组的用例、每条用例展开看步骤/截图/错误堆栈、环境信息。图片默认 base64 内嵌，一个 HTML 文件即可分享给别人。
+
+局限：**没有**历史趋势、分类统计图、复杂过滤。想要这些请装官方 CLI。
+
+### 官方 Allure 报告（功能完整）
+
+一次性准备：
+
+1. 到 https://github.com/allure-framework/allure2/releases 下载最新的 `allure-x.x.x.zip`
+2. 解压到任意目录，例如 `D:\tools\allure-2.30.0`
+3. 把 `D:\tools\allure-2.30.0\bin` 加入系统 `PATH`
+4. 打开新终端验证：`allure --version` 输出版本号即可（需 Java 8+）
+
+生成 & 查看：
+
+```bash
+python run_apk_tests.py --suite core --allure-serve       # 跑完自动 serve
+python run_apk_tests.py --suite core --allure-generate    # 生成 allure-report/ 静态目录
+# 双击：allure_serve.bat / allure_report.bat
+```
+
+### CLI 选项一览
+
+| 选项 | 说明 |
+|------|------|
+| `--allure-dir <DIR>` | 自定义结果目录，默认 `<项目>/allure-results` |
+| `--allure-append` | 追加模式，不清空结果目录（可累积多次运行） |
+| `--no-allure` | 关闭 Allure 结果输出 |
+| `--no-report` | 不生成 `report.html`（默认每次跑完都会生成） |
+| `--open-report` | 生成 `report.html` 后自动打开浏览器 |
+| `--allure-serve` | 结束后自动 `allure serve`（需 Allure CLI） |
+| `--allure-generate` | 结束后自动生成 `allure-report/` 静态目录（需 Allure CLI） |
+
+### 用例侧可选增强
+
+现有用例**无需改动**，Allure 会自动记录每条用例、每次 `self.assert_step` 和失败截图。若想让报告步骤更清晰，可在用例里显式包裹步骤：
+
+```python
+def run_steps(self) -> None:
+    with self.step("启动 App"):
+        self.app.launch_app(cfg.PACKAGE)
+        self.wait(3)
+
+    with self.step("打开首页并断言"):
+        self.assert_step(self.is_foreground(cfg.PACKAGE), "App 应在前台")
+
+    with self.step("附加运行时数据"):
+        self.attach_text("响应内容示例\n...", name="LLM 回复")
+        # 主动截图并挂到 Allure（不涉及断言）
+        self.snapshot(name="推荐结果页")
+```
+
+- `self.step(name)` — 显式步骤区块，报告里可展开
+- `self.attach(path, name=...)` — 挂文件（截图、日志片段等）
+- `self.attach_text(text, name=...)` — 挂一段纯文本
+- `self.snapshot(name=...)` — 主动截图并挂到 Allure
+
+### 定时任务的 Allure
+
+`scheduler.py` 也支持 Allure，默认**追加模式**（每次触发不清空，累积历史）：
+
+```bash
+python scheduler.py --apk lark --at 20:35
+# 想关掉 Allure：
+python scheduler.py --apk lark --at 20:35 --no-allure
+```
+
+跑一段时间后执行 `allure_report.bat`，即可看到定时任务的历史趋势曲线。
