@@ -22,7 +22,11 @@ if _ROOT not in _sys.path:
     _sys.path.insert(0, _ROOT)
 
 from tasks.apk.lark import config as cfg
-from tasks.apk.lark.helpers import dismiss_location_permission, unlock_screen
+from tasks.apk.lark.helpers import (
+    dismiss_location_permission,
+    dismiss_system_location_permission,
+    unlock_screen,
+)
 from tasks.framework.base_case import ApkTestCase
 from tasks.framework.helpers import (
     any_element_exists,
@@ -64,8 +68,11 @@ class CaseReceiveZhongzhiCare(ApkTestCase):
             "工作台应存在「中智关爱」入口（若不存在请先在飞书「我的常用」中添加）",
         )
         self.wait(cfg.H5_LOAD_WAIT_SEC)
-        # 中智关爱 H5 加载后可能弹出「地理位置授权」，2s 内轮询到就点「确定」
+        # H5 加载后按顺序处理两个可能的位置授权弹窗：
+        #   ① H5 地理位置授权 → 点「确定」
+        #   ② 系统位置权限（允许"飞书"获取位置）→ 点「仅在使用时允许」
         dismiss_location_permission(self.d)
+        dismiss_system_location_permission(self.d)
         dismiss_common_dialogs(self.d)
 
         # ── 5. 点击「奋斗食代」──────────────────────────────────────
@@ -74,6 +81,8 @@ class CaseReceiveZhongzhiCare(ApkTestCase):
             "中智关爱首页应存在「奋斗食代」入口",
         )
         self.wait(cfg.H5_LOAD_WAIT_SEC)
+        # 奋斗食代 H5 加载后同样可能弹地理位置授权，点「确定」
+        dismiss_location_permission(self.d)
 
         # ── 6. 点击「立即领取」──────────────────────────────────────
         # 未出现时优先给出可读的原因（当前按钮实际状态）

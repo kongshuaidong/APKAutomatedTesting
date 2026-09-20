@@ -12,6 +12,8 @@ __pycache__/
 NaturalLangua/logs/
 NaturalLangua/screenshots/*.png
 NaturalLangua/screenshots/*.xml
+NaturalLangua/allure-results/
+NaturalLangua/allure-report/
 
 # IDE
 .vscode/

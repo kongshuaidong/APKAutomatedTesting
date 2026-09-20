@@ -58,6 +58,26 @@ LOCATION_CONFIRM_LOCATORS = [
 # 检测地理位置弹窗的轮询上限（秒）
 LOCATION_POPUP_TIMEOUT_SEC = 2
 
+# ── 系统级位置权限弹窗（Android 权限控制器弹的）───────────────
+# 标题一般是「允许"飞书"获取此设备的位置信息吗？」或类似
+# 按钮：仅在使用时允许 / 仅限本次 / 拒绝，用例点击「仅在使用时允许」
+SYSTEM_LOCATION_TITLE_LOCATORS = [
+    {"textContains": "获取位置信息"},
+    {"textContains": "获取此设备的位置"},
+    {"textContains": "获取位置"},
+]
+SYSTEM_LOCATION_ALLOW_LOCATORS = [
+    {"text": "仅在使用时允许"},
+    {"textContains": "仅在使用时"},
+    {"text": "使用应用时允许"},
+    {"textContains": "使用应用时"},
+    {"text": "仅限本次"},
+    {"text": "允许"},
+]
+
+# 检测系统位置权限弹窗的轮询上限（秒）
+SYSTEM_LOCATION_POPUP_TIMEOUT_SEC = 3
+
 # 飞书启动等待时长（首页需要预加载 IM 列表，比一般 App 慢）
 LARK_LAUNCH_WAIT_SEC = 5
 
